@@ -8,7 +8,7 @@ import { NatoPhoneticAlphabetComponent } from './nato-phonetic-alphabet/nato-pho
 import { SalaryCalculatorComponent } from './salary-calculator/salary-calculator.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', component: SolarPositionComponent },
   { path: 'solar-position', component: SolarPositionComponent },
   { path: 'rand-generator', component: RandGeneratorComponent },
   { path: 'disk-capacity-calc', component: DiskCapacityCalcComponent },
