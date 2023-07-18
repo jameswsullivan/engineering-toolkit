@@ -1,11 +1,11 @@
-<div id="collectInfo">
-    <h1>Random String Generator</h1>
-    <form>
+<div class="collectInfo">
+    <h1 class="appTitle">Random String Generator</h1>
+    <form class="collectInfoForm">
         <label for="length">Length (8 - 25):</label>
         <input type="text" id="length" name="length" value="8" [(ngModel)]="length" /><br />
-        <label for="allowNumbers">Allow Numbers:</label>
+        <label for="allowNumbers">Allow Numbers (0~9):</label>
         <input type="checkbox" id="allowNumbers" name="allowNumbers" value="Allow Numbers" [(ngModel)]="allowNumbers" /><br />
-        <label for="allowSpecialChar">Allow Special Characters:</label>
+        <label for="allowSpecialChar">Allow Special Characters (&#x21;,&#x40;,&#x23;,&#x24;,&#x25;,&#x5E;,&#x26;,&#x2A;,&#x28;,&#x29;,&#x5F;,&#x2B;,&#x2D;,&#x3D;,&#x7B;,&#x7D;,&#x5B;,&#x5D;,&#x60;,&#x3F;,&#x3C;,&#x3E;):</label>
         <input type="checkbox" id="allowSpecialChar" name="allowSpecialChar" value="Allow Special Characters" [(ngModel)]="allowSpecialChar" /><br />
         <input type="button" id="generateNew" name="generateNew" value="Generate New String" (click)="generateNew()" />
         <input type="button" id="convertUpper" name="convertUpper" value="To Uppercase" (click)="convertUpper()" />
@@ -14,20 +14,21 @@
     </form>
 </div>
 
-<div id="results">
-    <h1>String Generated</h1>
-    <div id="stringGenerated">
-        <span id="resultLabel">String Generated:&nbsp;</span>
-        <span id="resultData">{{ randString }}</span><br />
-        <button [cdkCopyToClipboard]="randString">Copy to Clipboard</button>
-    </div>
-    <div>
-        <br /><br />
-        <span id="resultInfoLabel">Allow Numbers:&nbsp;</span>
-        <span id="resultInfoData">{{ allowNumbers }}</span><br />
-        <span id="resultInfoLabel">Allow Special Char:&nbsp;</span>
-        <span id="resultInfoData">{{ allowSpecialChar }}</span><br />
-        <!-- <span id="resultInfoLabel">:&nbsp;</span>
-        <span id="resultInfoData">{{  }}</span><br /> -->
-    </div>
+<div class="results">
+    <h1 class="appTitle">String Generated</h1>
+    <ul class="resultInfo">
+        <li class="resultInfoItems">
+            <span class="resultInfoLabel">String Generated:&nbsp;</span>
+            <span class="resultInfoData">{{ randString }}</span>&nbsp;&nbsp;
+            <button [cdkCopyToClipboard]="randString">Copy to Clipboard</button>
+        </li>
+        <li class="resultInfoItems">
+            <span class="resultInfoLabel">Allow Numbers:&nbsp;</span>
+            <span class="resultInfoData">{{ allowNumbers }}</span><br />
+        </li>
+        <li class="resultInfoItems">
+            <span class="resultInfoLabel">Allow Special Char:&nbsp;</span>
+            <span class="resultInfoData">{{ allowSpecialChar }}</span><br />
+        </li>
+    </ul>
 </div>
