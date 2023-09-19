@@ -1,9 +1,9 @@
 <div class="collectInfo">
-    <h1>Unit Converter</h1>
-    <form>
+    <h1 class="appTitle">Unit Converter</h1>
+    <form class="collectInfoForm">
         <label for="inputBox">{{ inputUnit }}:&nbsp;</label>
         <input type="text" id="inputBox" name="inputBox" value="0" [(ngModel)]="inputValue" />
-        <span id="resultText">{{ resultValue }}&nbsp;{{ outputUnit }}</span><br />
+        <span id="UnitConverterResultText">&nbsp;{{ resultValue }}&nbsp;{{ outputUnit }}</span><br />
         <label for="conversionSelect">Select Unit:&nbsp;</label>
         <select id="conversionSelect" name="conversionSelect" [(ngModel)]="conversionSelect" (change)="updateSelectedUnitLabels()">
             <option value="">select an option</option>
@@ -25,8 +25,8 @@
 </div>
 
 <div class="collectInfo">
-    <h1>RAID Calculator</h1>
-    <form>
+    <h1 class="appTitle">RAID Calculator</h1>
+    <form class="collectInfoForm">
         <label for="numOfDisks">Numer of Disks:&nbsp;</label>
         <input type="text" id="numOfDisks" name="numOfDisks" value="0" [(ngModel)]="numOfDisks" /><br />
         <label for="singleDiskCapacity">Single Disk Capacity: &nbsp;</label>
@@ -50,7 +50,7 @@
             <option value="RAIDZ">RAID-Z</option>
             <option value="RAIDZ2">RAID-Z2</option>
             <option value="RAIDZ3">RAID-Z3</option>
-        </select><br />
+        </select><br /><br />
         <span id="RAIDCapacityLabel">Effective RAID Capacity:&nbsp;</span>
         <span id="RAIDCapacityData">{{ raidCapacity }}&nbsp;{{ raidUnitSelect }}</span><br />
         <input type="button" id="calculateRAID" name="calculateRAID" value="Calculate" (click)="calculateRAID()" />
